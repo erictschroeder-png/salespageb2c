@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import { useEffect, useState } from "react"
 
+const CHECKOUT_URL = "https://app.paperbell.com/checkout/bookings/new?package_id=137497&tab=2025-10-31"
+
 export function StickyMobileCTA() {
   const [isVisible, setIsVisible] = useState(false)
 
@@ -32,12 +34,14 @@ export function StickyMobileCTA() {
     >
       <div className="bg-gradient-to-t from-background via-background to-background/80 backdrop-blur-sm border-t border-border p-4 shadow-2xl">
         <Button
-          onClick={scrollToPricing}
           size="lg"
           className="w-full h-16 text-lg font-bold uppercase tracking-wide shadow-lg hover:scale-[1.02] transition-transform"
+          asChild
         >
-          Secure My Spot Now
-          <ArrowRight className="ml-2 w-5 h-5" />
+          <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer">
+            Secure My Spot Now
+            <ArrowRight className="ml-2 w-5 h-5" />
+          </a>
         </Button>
         <p className="text-center text-xs text-muted-foreground mt-2 font-medium">Only 3 spots available this month</p>
       </div>

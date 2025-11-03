@@ -5,6 +5,8 @@ import { Card } from "@/components/ui/card"
 import { Check, Clock } from "lucide-react"
 import { useEffect, useRef, useState } from "react"
 
+const CHECKOUT_URL = "https://app.paperbell.com/checkout/bookings/new?package_id=137497&tab=2025-10-31"
+
 const features = [
   "1:1 and group call coaching sessions",
   "Unlimited messaging support via private portal",
@@ -109,8 +111,11 @@ export function PricingSection() {
               <Button
                 size="lg"
                 className="w-full text-base md:text-lg font-bold py-6 md:py-7 h-auto hover:scale-105 transition-transform duration-200 shadow-lg uppercase tracking-wide relative z-10 min-h-[56px]"
+                asChild
               >
-                Secure My Spot Now
+                <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer">
+                  Secure My Spot Now
+                </a>
               </Button>
             </Card>
           </div>
@@ -150,8 +155,11 @@ export function PricingSection() {
                 size="lg"
                 variant="outline"
                 className="w-full text-base md:text-lg font-bold py-6 md:py-7 h-auto hover:bg-primary/5 hover:scale-105 transition-all duration-200 border-2 bg-transparent uppercase tracking-wide min-h-[56px]"
+                asChild
               >
-                Secure My Spot Now
+                <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer">
+                  Secure My Spot Now
+                </a>
               </Button>
             </Card>
           </div>

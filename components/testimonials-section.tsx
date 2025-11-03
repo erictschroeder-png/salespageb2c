@@ -4,41 +4,56 @@ import { useEffect, useRef, useState } from "react"
 import { Quote } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
+const CHECKOUT_URL = "https://app.paperbell.com/checkout/bookings/new?package_id=137497&tab=2025-10-31"
+
 const testimonials = [
   {
     name: "TAYLOR",
     role: "Business Owner & Mom",
-    image: "/professional-woman-headshot-confident.jpg",
+    image:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-10-30%20at%2012.16.17%E2%80%AFPM-rLme0H0TA54GUy2B0MUSvMljptlERZ.png",
     metric: "Energy restored, sleep improved in weeks",
     text: "Before working with Carley, I was constantly exhausted, running on caffeine and stress. My sleep was awful, my hormones were a mess, and I felt like I was failing at everything. Within weeks, I started feeling calmer, sleeping better, and actually having energy for my family and business. This program changed everything for me.",
   },
   {
     name: "KAYLA",
     role: "Healthcare Professional",
-    image: "/professional-woman-headshot-happy.jpg",
+    image:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-10-30%20at%2012.15.30%E2%80%AFPM-Lamv11NOfi6nYynOxxu4ZPBb0VngiA.png",
     metric: "Passed boards on first try, off all medications",
     text: "Carley helped me overcome crippling test anxiety that prevented me from passing my boards. Through her guidance, I learned about food, stopped medications, and mastered calming techniques. Now, I visit family without panic, passed my boards, eat for nutrition, and saw related symptoms disappear.",
   },
   {
     name: "MELISSA",
     role: "Engaged & Thriving",
-    image: "/avatar-1.png",
+    image:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-10-30%20at%2012.15.17%E2%80%AFPM-1SGnjx9Njs78NSOHK6vKnnpGqtRF8K.png",
     metric: "Transformed self-care, inspired partner to join",
     text: "Carley's intuitive, holistic program transformed my self-care and inspired my fiancé to join. Her expertise in wellness—covering thoughts, diet, sleep, and movement—sets the foundation for a healthy life and marriage. Highly recommended!",
   },
   {
     name: "KYLA",
     role: "Mental Health Advocate",
-    image: "/professional-woman-headshot-calm.jpg",
+    image:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-10-30%20at%2012.16.06%E2%80%AFPM-PQqiAbYDeqmBiIX5lESN88T8edODRp.png",
     metric: "Off SSRIs and birth control, emotionally grounded",
     text: "I felt emotionally overwhelmed and anxious, and birth control and SSRIs only masked the problem. Working with Carley helped me calm my nervous system, get off the medications, and finally feel my emotions without losing control. I'm grounded, clear, and in charge of my health again!",
   },
   {
     name: "NORMA",
     role: "Cancer Survivor",
-    image: "/professional-woman-headshot-strong.jpg",
+    image:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202025-10-30%20at%2017.56.36-EbhBeSzB8nnBnVN8oFTrkR9gbHRAzk.jpeg",
     metric: "Off all medications, inflammation gone",
     text: "I was on countless medications for rheumatoid arthritis, appendicitis, and even breast cancer, but I never understood how inflammation was driving it all. Working with Carley changed my entire perspective on healing. Now, I'm off all medications, my body feels stronger, and I finally have my health back.",
+  },
+  {
+    name: "MARIANNE",
+    role: "Celebrating 62 Years Strong",
+    image:
+      "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-10-30%20at%2012.13.20%E2%80%AFPM-6e8DKyPJe42B50qJyH3RgghXBGmHPz.png",
+    metric: "Down 30 lbs, feeling better than ever at 62",
+    text: "I'm down 30 lbs since starting with Carley and It's my 62nd Birthday. It was one of my best birthdays yet! I'm feeling better than I have in years- lighter, more energetic, healthier, more confident, more content.",
   },
 ]
 
@@ -127,8 +142,11 @@ export function TestimonialsSection() {
           <Button
             size="lg"
             className="bg-terracotta hover:bg-terracotta/90 text-cream font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 min-h-[56px] md:min-h-[64px] w-full md:w-auto px-6 md:px-12 py-5 md:py-6 text-sm md:text-base"
+            asChild
           >
-            JOIN THESE SUCCESSFUL WOMEN →
+            <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer">
+              JOIN THESE SUCCESSFUL WOMEN →
+            </a>
           </Button>
           <p className="text-xs md:text-sm text-muted-foreground mt-3 md:mt-4">Only 3 spots available this month</p>
         </div>

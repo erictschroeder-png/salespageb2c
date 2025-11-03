@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button"
 import { useEffect, useRef, useState } from "react"
 import { Clock } from "lucide-react"
 
+const CHECKOUT_URL = "https://app.paperbell.com/checkout/bookings/new?package_id=137497&tab=2025-10-31"
+
 export function CTASection() {
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLElement>(null)
@@ -51,8 +53,11 @@ export function CTASection() {
           <Button
             size="lg"
             className="text-lg px-12 py-7 h-auto hover:scale-105 transition-transform duration-200 shadow-lg"
+            asChild
           >
-            SECURE MY SPOT NOW
+            <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer">
+              SECURE MY SPOT NOW
+            </a>
           </Button>
           <p className="text-sm text-muted-foreground">Instant access to your client portal upon enrollment</p>
         </div>

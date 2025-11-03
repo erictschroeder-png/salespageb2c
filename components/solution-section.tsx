@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button"
 import { useEffect, useRef, useState } from "react"
 import { ArrowRight } from "lucide-react"
 
+const CHECKOUT_URL = "https://app.paperbell.com/checkout/bookings/new?package_id=137497&tab=2025-10-31"
+
 const phases = [
   {
     number: "01",
@@ -105,8 +107,11 @@ export function SolutionSection() {
           <Button
             size="lg"
             className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg font-semibold shadow-lg hover:shadow-xl transition-all"
+            asChild
           >
-            SECURE MY SPOT
+            <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer">
+              SECURE MY SPOT
+            </a>
           </Button>
         </div>
       </div>
